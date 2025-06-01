@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BokaHos - Frisörbokningar</title>
+    <meta name="description" content="Boka dina frisörtider enkelt online med BokaHos" />
+    <meta name="author" content="BokaHos" />
+
+    <meta property="og:title" content="BokaHos - Frisörbokningar" />
+    <meta property="og:description" content="Boka dina frisörtider enkelt online med BokaHos" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@BokaHos" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80" />
+    
+    <!-- Hantera rediriecting from 404 till SPA -->
+    <script>
+      // Kolla om vi har redirect från 404
+      (function() {
+        const redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          // Cleara redirected för att förhindra en endless loop
+          sessionStorage.removeItem('redirect');
+          // Sätter sidans URL till den sparade sökvägen utan att ladda om sidan, svårt att förklara det honestly
+          if (redirect !== window.location.pathname) {
+            window.history.replaceState(null, null, redirect);
+            console.log('Redirected from 404 to:', redirect);
+          }
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
