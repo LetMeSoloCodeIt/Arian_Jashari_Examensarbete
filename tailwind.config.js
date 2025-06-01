@@ -1,4 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+
+// Här har jag använt mig utav Tailwind för att jag ville bredda min erfarenhet inom det, jag ville göra min styling inline istället för att ha så många separata CSS filer.
+// Jag har också insett att detta är standard i branschen och något jag borde lärt mig tidigare
+
 export default {
   darkMode: ["class"],
   content: [

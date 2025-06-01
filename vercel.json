@@ -1,4 +1,3 @@
-// Config för att få vercel att funka med min app
 {
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
